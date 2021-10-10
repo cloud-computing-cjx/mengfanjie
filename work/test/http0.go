@@ -12,7 +12,6 @@ func test(w http.ResponseWriter, r *http.Request) {
 		// fmt.Fprintln(w, h, header[h])
 		w.Header().Set(h, strings.Join(header[h], `,`))
 	}
-	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 }
 
