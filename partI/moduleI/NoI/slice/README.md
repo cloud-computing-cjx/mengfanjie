@@ -11,3 +11,5 @@ fullSlice [1 2 3 4 5]
 remove3rdItem [1 2 4 5]
 ```
 ## Make 和 New
+- New 返回指针地址
+- Make 返回第一个元素，可预设内存空间，避免未来的内存拷贝
