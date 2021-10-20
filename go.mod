@@ -1,4 +1,4 @@
-module geek-GoLanguageFromEntryToActualCombat
+module github.com/cncamp/mengfanjie
 
 go 1.17
 
