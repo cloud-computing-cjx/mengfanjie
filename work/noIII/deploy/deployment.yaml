@@ -18,8 +18,27 @@ spec:
           image: cncamp/httpserver:v1.0
           ports:
           - containerPort: 80
-          - name: config-volume
-            mountPath: /etc/config  
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            successThreshold: 2
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "/bin/sh","sleep 3;" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 200m
+              memory: 200Mi
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config  
       volumes:
         - name: config-volume
           configMap:
