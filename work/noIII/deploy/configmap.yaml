@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: httpserver-configmap
+  labels:
+    app.101.io/test: httpserver
+data:
+  version: "v3"

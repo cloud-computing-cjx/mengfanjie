@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpserver
+  template:
+    metadata:
+      labels:
+        app: httpserver
+    spec:
+      containers:
+        - name: httpserver
+          imagePullPolicy: Always
+          image: cncamp/httpserver:v1.0
+          ports:
+          - containerPort: 80
+          - name: config-volume
+            mountPath: /etc/config  
+      volumes:
+        - name: config-volume
+          configMap:
+            name: httpserver-configmap
