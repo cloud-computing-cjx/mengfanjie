@@ -248,12 +248,6 @@ NAME                        READY   STATUS    RESTARTS   AGE
 service0-865968847b-898nk   2/2     Running   0          5m7s
 service1-7c9df986b9-pjtwj   2/2     Running   0          5m3s
 service2-6d6cc75fd-gbjgc    2/2     Running   0          5m
-
-root@kubemaster:~/go/src/github.com/cncamp/mengfanjie/work/noV# k get po -n istiodemo
-NAME                        READY   STATUS    RESTARTS   AGE
-service0-865968847b-898nk   2/2     Running   0          5m7s
-service1-7c9df986b9-pjtwj   2/2     Running   0          5m3s
-service2-6d6cc75fd-gbjgc    2/2     Running   0          5m
 root@kubemaster:~/go/src/github.com/cncamp/mengfanjie/work/noV# k logs -f service2-6d6cc75fd-gbjgc -n istiodemo
 ERROR: logging before flag.Parse: I1226 15:58:54.338103       1 main.go:21] Starting service2
 ERROR: logging before flag.Parse: I1226 15:58:54.338210       1 main.go:38] Server Started
