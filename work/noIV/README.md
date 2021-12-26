@@ -1,6 +1,6 @@
 # 制作镜像
 ```
-make push
+cd httpserver && make push
 ```
 # 部署
 ```
