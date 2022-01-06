@@ -10,7 +10,7 @@ spec:
   http:
     - match:
       - port: 443
-      - uri:
+        uri:
           exact: "/httpsserver/hello"
       rewrite:
         uri: "/hello"
